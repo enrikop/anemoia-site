@@ -6,8 +6,12 @@
     <title>ANEMOIA</title>
     <link rel="stylesheet" href="style/main.css">
     <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <meta name="description" content="Anemoia™ - streetwear from the future">
 </head>
 <body>
+  
+  <div class="custom-cursor"></div>
 
   <header class="anemoia-header">
     <nav class="navbar">
@@ -17,12 +21,12 @@
         <li><a href="#shop" class="glitch-gsap">SHOP</a></li>
       </ul>
       <div class="nav-right">
-        <a href="#join" class="ritual-button glitch-gsap">JOIN THE RITUAL</a>
+        <a href="#join" class="ritual-button glitch-gsap hover-reactive">JOIN THE RITUAL</a>
       </div>
     </nav>
   </header>
   
-    <section class="hero">
+    <section class="scroll-block hero">
         <video autoplay muted loop playsinline class="hero-video">
           <source src="assets/video/hero.mp4" type="video/mp4">
           Your browser does not support the video tag.
@@ -32,7 +36,7 @@
         </div>
     </section>
 
-      <section class="drop-section">
+      <section class="scroll-block drop-section">
         <div class="drop-marquee" id="dropMarquee">
           <span>NEW ARRIVAL DROP 003 // ACTIVE // EXECUTE // NEW ARRIVAL DROP 003 // ACTIVE // EXECUTE //</span>
         </div>
@@ -48,14 +52,14 @@
                 <img src="assets/images/scavenger-fleece-fr.png" alt="Drop 003 - Jacket 2" class="drop-img 2">
               </div>
 
-              <div class="drop-discover" id="dropDiscover">
+              <div class="drop-discover hover-reactive" id="dropDiscover">
                 <span class="glitch-gsap">DISCOVER ALL THE DROPS</span>
               </div>
               
         </div>
       </section>
 
-      <section class="visual-manifesto">
+      <section class="scroll-block visual-manifesto">
         <div class="visual-grid">
           
           <div class="col-1">
@@ -109,7 +113,7 @@
           </div>
       </section>
 
-      <section class="ritual-section">
+      <section class="scroll-block ritual-section">
         <div class="ritual-content">
           <h2 id="ritual-typed">
             <span>DON'T</span> <span>REMEMBER.</span> <span>DESIGN.</span> <span>RITUALIZE</span>
@@ -118,7 +122,7 @@
         </div>
       </section>
       
-      <section class="product-carousel">
+      <section class="scroll-block product-carousel">
         <div class="carousel-wrapper">
           <button class="carousel-button left">&lt;</button>
           <div class="carousel-track">
@@ -184,7 +188,7 @@
 
       </section>
 
-      <section class="emotional-gallery">
+      <section class="scroll-block emotional-gallery">
         <div class="gallery-track">
           <div class="gallery-image"><img src="assets/images/2girls.png" alt="Look 1"></div>
           <div class="gallery-image"><img src="assets/images/arcade guys.png" alt="Look 2"></div>
@@ -194,7 +198,7 @@
         </div>
       </section>
 
-      <section id="join" class="join-section">
+      <section id="join" class="scroll-block join-section">
         <div class="join-h2">JOIN THE RITUAL</div>
         <form name="ritual-form" method="POST" data-netlify="true">
           <input type="text" name="name" placeholder="Your name" required>
