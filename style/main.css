@@ -12,6 +12,34 @@ body {
     color: #eee;
 }
 
+/*================================== CURSOR =============================*/
+
+.custom-cursor {
+  width: 30px;
+  height: 30px;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: transform 0.15s ease-out, background-color 0.2s ease;
+  z-index: 9999;
+  mix-blend-mode: overlay;
+  backdrop-filter: blur(2px);
+}
+
+.hover-reactive {
+  transition: filter 0.2s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+.hover-reactive:hover {
+  filter: blur(1px) brightness(1.4);
+  transform: scale(1.05) rotate(0.5deg);
+}
+
+/*================================== NAVIGATOR =============================*/
+
 .anemoia-header {
   position: fixed;
   top: 0;
@@ -24,7 +52,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem 2rem;
+  padding: 0rem 2rem;
   font-family: monospace;
 }
 
@@ -628,7 +656,7 @@ body {
     max-width: 600px;
     aspect-ratio: 1 / 1;
     overflow: hidden;
-    border-radius: 8px;
+    /* border-radius: 8px; */
   }
   
   .gallery-image img {
@@ -660,6 +688,12 @@ body {
     color: #2f2f2f;
     white-space: nowrap;
     margin-bottom: 1em;
+    animation: flicker 1s infinite alternate;
+  }
+  
+  @keyframes flicker {
+    0% { opacity: 0.5; }
+    100% { opacity: 1; }
   }
 
   .join-section form {
@@ -785,11 +819,33 @@ body {
 .join-section button:hover {
   background: #11b5aa;
 }
+
+.scroll-block {
+  opacity: 0;
+  transform: translateY(80px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  will-change: opacity, transform;
+}
+
   
 
   /*================================== MOBILE =============================*/
 
   @media (max-width: 768px) {
+
+    .navbar {
+      max-height:50px;
+      padding: 0rem 0.6rem;
+    }
+
+    .nav-left li a {
+      font-size: 0.5rem;
+    }
+
+    .ritual-button {
+      font-size: 0.4rem;
+      padding: 0.2rem;
+    }
 
     .hero {
       width: 100%;
@@ -802,10 +858,13 @@ body {
       margin: 0 auto;
       padding-bottom: 120px;
     }
-  
 
     .drop-section {
     min-height: 20vh
+    }
+
+    .drop-marquee span {
+      left: 80vw;
     }
 
     .visual-grid {
@@ -877,7 +936,7 @@ body {
     }
 
     .product-card {
-      flex: 0 0 80%;
+      flex: 0 0 100%;
   }
     
     .footer-main {
