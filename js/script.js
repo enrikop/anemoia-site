@@ -1,5 +1,35 @@
 gsap.registerPlugin(ScrollTrigger);
 
+const cursor = document.querySelector('.custom-cursor');
+
+document.addEventListener('mousemove', e => {
+  gsap.to(cursor, {
+    x: e.clientX,
+    y: e.clientY,
+    duration: 0.1,
+    ease: 'power2.out'
+  });
+});
+
+document.querySelectorAll('.hover-reactive').forEach(el => {
+  el.addEventListener('mouseenter', () => {
+    const tl = gsap.timeline();
+    for (let i = 0; i < 3; i++) {
+      tl.to(el, {
+        x: gsap.utils.random(-3, 3),
+        duration: 0.05,
+        repeat: 1,
+        yoyo: true
+      });
+    }
+  });
+
+  el.addEventListener('mouseleave', () => {
+    gsap.to(el, { x: 0, duration: 0.1 });
+  });
+});
+
+
 document.querySelectorAll('.glitch-gsap').forEach(el => {
   let glitchInterval;
 
@@ -45,6 +75,21 @@ btnRight.addEventListener('click', () => {
 
 
 window.addEventListener("DOMContentLoaded", () => {
+
+  gsap.utils.toArray('.scroll-block').forEach(section => {
+    gsap.to(section, {
+      opacity: 1,
+      y: 0,
+      duration: 1.2,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: section,
+        start: 'top 75%',
+        toggleActions: 'play none none reverse'
+      }
+    });
+  });
+  
   
   gsap.to("#dropMarquee span", {
     x: "-150vw",
